@@ -47,7 +47,7 @@ def add(request):
             ## No customer with same id
             if customer == None:
                 ##TODO: date validation
-                cursor.execute("INSERT INTO customers VALUES (%s, %s, %s, %s, %s, %s, %s)"
+                cursor.execute("INSERT INTO userInfo VALUES (%s, %s, %s, %s)"
                         , [request.POST['email'], request.POST['firstName'], request.POST['lastName'],
                            request.POST['username']  ])
                 return redirect('index')    
