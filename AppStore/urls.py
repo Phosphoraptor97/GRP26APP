@@ -27,5 +27,7 @@ urlpatterns = [
     path('edit/<str:id>', app.views.edit, name='edit'),
     path('driverlogin', app.views.driverlogin, name='driverlogin'),
     path('driverinterface', app.views.driverinterface, name='driverinterface'),
+    path('driverhistory', app.views.driverhistory, name='driverhistory')
+    
     
 ]
