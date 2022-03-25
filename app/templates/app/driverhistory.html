@@ -1,1 +1,20 @@
-
+{% load static %}
+<html>
+<body>
+    <h2>Admin page user list</h2>
+    <img src="{% static 'app/images/nus.jpg' %}" width="10%"   alt="NUS logo"/><br/>
+    <a href="driverlogin">back</a>
+    <br/><br/>
+    <table border=1>
+        <thead>
+            <th>location</th>
+            <th>destination</th>
+            <th>time</th>
+            <th>passengername</th>
+            <th>transactionamount</th>
+            <th>date</th>
+        </thead>
+        {% endfor %}
+    </table>
+</body>
+</html>
