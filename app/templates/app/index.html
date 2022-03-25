@@ -7,14 +7,15 @@
     <br/><br/>
     <table border=1>
         <thead>
-            <th>ID</th>
+            <th>email</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Action</th>
+            <th>username</th>
+            <th>action</th>
         </thead>
         {% for cust in records %}
         <tr>
-            <td> {{ cust.5 }} </td>
+            
             <td> {{ cust.0 }} </td>
             <td> {{ cust.1 }} </td>
             <td>
@@ -23,8 +24,8 @@
                 | 
                 <form method="POST" style="display: inline;">
                 {% csrf_token %}
-                <input type="hidden" name="id" value="{{cust.5}}"/>
-                <button onclick="return confirm('Are you sure you want to delete {{cust.5}}?');" type="submit" name="action" value="delete">Delete</button> 
+                <input type="hidden" name="email" value="{{userInfo.0}}"/>
+                <button onclick="return confirm('Are you sure you want to delete {{userInfo.0}}?');" type="submit" name="action" value="delete">Delete</button> 
               </form></td>
         </tr>
         {% endfor %}
