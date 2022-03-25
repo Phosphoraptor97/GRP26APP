@@ -33,24 +33,7 @@ def driverlogin(request):
     context = {}
     status = ''
 
-    if request.POST:
-        ## Check if customerid is already in the table
-        with connection.cursor() as cursor:
-
-            cursor.execute("SELECT * FROM userInfo WHERE email = %s", [request.POST['email']])
-            customer = cursor.fetchone()
-            ## No customer with same id
-            if customer == None:
-                ##TODO: date validation
-                cursor.execute("INSERT INTO userInfo VALUES (%s, %s, %s, %s)"
-                        , [request.POST['email'], request.POST['firstName'], request.POST['lastName'],
-                           request.POST['username']  ])
-                return redirect('index')    
-            else:
-                status = 'Customer with ID %s already exists' % (request.POST['email'])
-
-
-    context['status'] = status
+    
     
 
             
