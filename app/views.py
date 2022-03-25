@@ -28,7 +28,7 @@ def view(request, email):
     with connection.cursor() as cursor:
         cursor.execute("SELECT * FROM userInfo WHERE email = %s", [email])
         customer = cursor.fetchone()
-    result_dict = {'cust': email}
+    result_dict = {'userInfo': email}
 
     return render(request,'app/view.html',result_dict)
 
