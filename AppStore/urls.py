@@ -25,7 +25,7 @@ urlpatterns = [
     path('add', app.views.add, name='add'),
     path('view/<str:id>', app.views.view, name='view'),
     path('edit/<str:id>', app.views.edit, name='edit'),
-    path('driverlogin', app.views.driverlogin, name='add'),
-    path('driverinterface', app.views.driverinterface, name='add'),
+    path('driverlogin', app.views.driverlogin, name='driverlogin'),
+    path('driverinterface', app.views.driverinterface, name='driverinterface'),
     
 ]
