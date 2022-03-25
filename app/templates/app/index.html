@@ -23,6 +23,8 @@
             <td>
                 <a href="view/{{userInfo.0}}"><button>View</button></a> | 
                 <a href="edit/{{userInfo.0}}"><button>Edit</button></a>
+                <a href="driver/{{userInfo.0}}"><button>Sign up as driver</button></a>
+                <a href="passenger/{{userInfo.0}}"><button>Sign up as passenger</button></a>
                 | 
                 <form method="POST" style="display: inline;">
                 {% csrf_token %}
