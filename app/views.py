@@ -26,7 +26,7 @@ def driverinterface(request):
 
     context['status'] = status
  
-    return render(request, "app/add.html", context)
+    return render(request, "app/driverinterface.html", context)
 
 def driverlogin(request):
     """Shows the main page"""
