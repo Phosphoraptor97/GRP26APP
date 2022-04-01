@@ -23,8 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', app.views.index, name='index'),
     path('add', app.views.add, name='add'),
-    path('view/<str:id>', app.views.view, name='view'),
-    path('edit/<str:id>', app.views.edit, name='edit'),
+    path('view/<str:email>', app.views.view, name='view'),
+    path('edit/<str:email>', app.views.edit, name='edit'),
     path('driverlogin', app.views.driverlogin, name='driverlogin'),
     path('driverinterface', app.views.driverinterface, name='driverinterface'),
     path('driverhistory', app.views.driverhistory, name='driverhistory')
