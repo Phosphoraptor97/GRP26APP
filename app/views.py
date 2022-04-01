@@ -73,13 +73,9 @@ def driverlogin(request):
                 return redirect('driverinterface')    
             else:
                 status = 'Customer with ID %s already exists' % (request.POST['email'])
-
-    
-    
-
-            
-       
+   
     return render(request, "app/driverlogin.html", context)    
+    
     
 def index(request):
     """Shows the main page"""
@@ -107,7 +103,7 @@ def view(request, email):
     with connection.cursor() as cursor:
         cursor.execute("SELECT * FROM userInfo WHERE email = %s", [email])
         customer = cursor.fetchone()
-    result_dict = {'userInfo': email}
+    result_dict = {'userInfo': customer}
 
     return render(request,'app/view.html',result_dict)
 
