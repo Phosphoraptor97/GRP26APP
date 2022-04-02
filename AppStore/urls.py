@@ -21,6 +21,7 @@ import app.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',app.views.homepage,name='homepage'),
     path('', app.views.index, name='index'),
     path('add', app.views.add, name='add'),
     path('view/<str:email>', app.views.view, name='view'),
