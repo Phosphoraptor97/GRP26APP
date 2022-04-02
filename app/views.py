@@ -83,7 +83,7 @@ def homepage(request):
     context['status'] = status
  
 
-    return render(request,"app/signup.html",context)
+    return render(request,"app/homepage.html",context)
 
 def signup(request):
     """Shows the main page"""
