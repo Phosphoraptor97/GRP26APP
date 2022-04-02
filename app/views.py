@@ -76,7 +76,9 @@ def driverlogin(request):
    
     return render(request, "app/driverlogin.html", context)    
     
-    
+def homepage(request):
+    return render(request,"app/homepage.html",context)
+
 def index(request):
     """Shows the main page"""
 
