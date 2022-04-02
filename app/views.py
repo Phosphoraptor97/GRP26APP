@@ -85,6 +85,15 @@ def homepage(request):
 
     return render(request,"app/homepage.html",context)
 
+def signup(request):
+    """Shows the main page"""
+    context = {}
+    status = ''
+    context['status'] = status
+ 
+
+    return render(request,"app/signup.html",context)
+
 def index(request):
     """Shows the main page"""
 
