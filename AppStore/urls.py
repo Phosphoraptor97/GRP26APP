@@ -27,9 +27,10 @@ urlpatterns = [
     path('view/<str:email>', app.views.view, name='view'),
     path('edit/<str:email>', app.views.edit, name='edit'),
     path('driverlogin', app.views.driverlogin, name='driverlogin'),
-    path('driverinterface', app.views.driverinterface, name='driverinterface'),
+    path('driverinterface/', app.views.driverinterface, name='driverinterface'),
     path('driverhistory', app.views.driverhistory, name='driverhistory'),
-    path('signup', app.views.signup, name='signup')
+    path('signup', app.views.signup, name='signup'),
+    path('passengerinterface/', app.views.signup, name='signup')
     
     
 ]
