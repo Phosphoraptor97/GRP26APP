@@ -29,6 +29,7 @@ urlpatterns = [
     path('driverlogin', app.views.driverlogin, name='driverlogin'),
     path('driverinterface', app.views.driverinterface, name='driverinterface'),
     path('driverhistory', app.views.driverhistory, name='driverhistory')
+    path('signup', app.views.signup, name='signup')
     
     
 ]
