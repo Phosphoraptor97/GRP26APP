@@ -2,8 +2,15 @@
 <html>
 <body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
-
+<h1>Login</h1>
+    <form method="POST">
+        <!-- Security token by Django -->
+        {% csrf_token %}
+        <!-- form -->
+        Email<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="email" value="{{obj.2}}" maxlength="64" class="textinput textInput" required="" id="id_email"> </div> </div> <div id="div_id_dob" class="control-group"> <label for="id_dob" class="control-label requiredField">
+        Password <span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="password" class="dateinput" required="" id="password"> </div> </div> <div id="div_id_since" class="control-group"> <label for="id_since" class="control-label requiredField">
+        <br>
+        <button type="submit" value="Update">Update</button>
+    </form>
 </body>
 </html>
