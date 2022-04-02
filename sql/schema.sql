@@ -3,7 +3,6 @@ email VARCHAR(256) NOT NULL,
 username VARCHAR(32) NOT NULL,
 firstName VARCHAR(32) NOT NULL,
 lastName VARCHAR(32) NOT NULL,
-password VARCHAR(32) NOT NULL,
 PRIMARY KEY (email, username, firstName, lastName)
 );
 
@@ -50,3 +49,21 @@ luggageSpace SMALLINT NOT NULL,
 price DECIMAL(10,2) NOT NULL,
 CHECK(startPoint != destination AND startTime >= '00:00:00' AND startTime <= '23:59:59' AND numberSeats >= 1 AND luggageSpace >= 0)
 );
+
+CREATE TABLE IF NOT EXISTS rideInfo (
+transactionNumber VARCHAR(32) NOT NULL,
+passenger VARCHAR(256) UNIQUE NOT NULL,
+driver VARCHAR(256) UNIQUE NOT NULL,
+PRIMARY KEY (transactionNumber, passenger, driver),
+FOREIGN KEY (passenger) REFERENCES passengerDetail(email) ON DELETE CASCADE DEFERRABLE,
+FOREIGN KEY (driver) REFERENCES driverDetail(email) ON DELETE CASCADE DEFERRABLE
+)
+
+CREATE TABLE IF NOT EXISTS transactionHistory (
+transactionNumber VARCHAR(32) NOT NULL,
+passenger VARCHAR(256) UNIQUE NOT NULL,
+driver VARCHAR(256) UNIQUE NOT NULL,
+PRIMARY KEY (transactionNumber, passenger, driver),
+FOREIGN KEY (passenger) REFERENCES passengerDetail(email) ON DELETE CASCADE DEFERRABLE,
+FOREIGN KEY (driver) REFERENCES driverDetail(email) ON DELETE CASCADE DEFERRABLE
+)
