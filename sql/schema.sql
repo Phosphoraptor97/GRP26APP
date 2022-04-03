@@ -50,3 +50,15 @@ luggageSpace SMALLINT NOT NULL,
 price DECIMAL(10,2) NOT NULL,
 CHECK(startPoint != destination AND startTime >= '00:00:00' AND startTime <= '23:59:59' AND numberSeats >= 1 AND luggageSpace >= 0)
 );
+
+CREATE TABLE IF NOT EXISTS transactionHistory (
+  transactionID VARCHAR(32) NOT NULL,
+  driver VARCHAR(32) NOT NULL, ##refer to driver's username here
+  passenger VARCHAR(32) NOT NULL, ##refer to passenger's username here
+  startPoint VARCHAR(128) NOT NULL,
+  destination VARCHAR(128) NOT NULL,
+  totalPassengerNumber SMALLINT NOT NULL,
+  price DECIMAL(10,2) NOT NULL,
+  CHECK()
+  );
+  
