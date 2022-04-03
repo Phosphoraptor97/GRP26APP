@@ -10,11 +10,11 @@ def passengerlist(request):
     if request.POST:
         if request.POST['action'] == 'delete':
             with connection.cursor() as cursor:
-                cursor.execute("DELETE FROM userInfo WHERE email = %s", [request.POST['email']])
+                cursor.execute("DELETE FROM passengerDetail WHERE email = %s", [request.POST['email']])
 
     ## Use raw query to get all objects
     with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM userInfo ORDER BY email")
+        cursor.execute("SELECT * FROM passengerDetail ORDER BY email")
         userInfo = cursor.fetchall()
 
     result_dict = {'records': passengerDetail}
@@ -28,11 +28,11 @@ def driverlist(request):
     if request.POST:
         if request.POST['action'] == 'delete':
             with connection.cursor() as cursor:
-                cursor.execute("DELETE FROM userInfo WHERE email = %s", [request.POST['email']])
+                cursor.execute("DELETE FROM driverDetail WHERE email = %s", [request.POST['email']])
 
     ## Use raw query to get all objects
     with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM userInfo ORDER BY email")
+        cursor.execute("SELECT * FROM driverDetail ORDER BY email")
         userInfo = cursor.fetchall()
 
     result_dict = {'records': driverDetail}
