@@ -2,6 +2,43 @@ from django.shortcuts import render, redirect
 from django.db import connection
 
 # Create your views here.
+
+def passengerlist(request):
+    """Shows the main page"""
+
+    ## Delete customer
+    if request.POST:
+        if request.POST['action'] == 'delete':
+            with connection.cursor() as cursor:
+                cursor.execute("DELETE FROM userInfo WHERE email = %s", [request.POST['email']])
+
+    ## Use raw query to get all objects
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT * FROM userInfo ORDER BY email")
+        userInfo = cursor.fetchall()
+
+    result_dict = {'records': userInfo}
+
+    return render(request,'app/passengerlist.html',result_dict)
+
+def driverlist(request):
+    """Shows the main page"""
+
+    ## Delete customer
+    if request.POST:
+        if request.POST['action'] == 'delete':
+            with connection.cursor() as cursor:
+                cursor.execute("DELETE FROM userInfo WHERE email = %s", [request.POST['email']])
+
+    ## Use raw query to get all objects
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT * FROM userInfo ORDER BY email")
+        userInfo = cursor.fetchall()
+
+    result_dict = {'records': userInfo}
+
+    return render(request,'app/driverlist.html',result_dict)
+
 def driverhistory(request):
     """Shows the main page"""
     context = {}
