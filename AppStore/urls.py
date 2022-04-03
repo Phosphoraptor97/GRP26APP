@@ -35,7 +35,7 @@ urlpatterns = [
     
     path('passengerinterface/', app.views.passengerinterface, name='passengerinterface'),
     path('passengerlist/',app.views.passengerlist,name='passengerlist'),
-    path('driverlist/',app.views.driverlist,name'passengerlist')
+    path('driverlist/',app.views.driverlist,name='passengerlist')
     
     
 ]
