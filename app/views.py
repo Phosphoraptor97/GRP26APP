@@ -19,7 +19,7 @@ def passengerDetail(request):
 
     result_dict = {'records': passengerDetail}
 
-    return render(request,'app/passengerlist.html',result_dict)
+    return render(request,'app/passengerDetail.html',result_dict)
 
 def driverDetail(request):
     """Shows the main page"""
@@ -37,7 +37,7 @@ def driverDetail(request):
 
     result_dict = {'records': driverDetail}
 
-    return render(request,'app/driverlist.html',result_dict)
+    return render(request,'app/driverDetail.html',result_dict)
 
 def driverhistory(request):
     """Shows the main page"""
