@@ -17,7 +17,7 @@ def passengerlist(request):
         cursor.execute("SELECT * FROM userInfo ORDER BY email")
         userInfo = cursor.fetchall()
 
-    result_dict = {'records': userInfo}
+    result_dict = {'records': passengerDetail}
 
     return render(request,'app/passengerlist.html',result_dict)
 
@@ -35,7 +35,7 @@ def driverlist(request):
         cursor.execute("SELECT * FROM userInfo ORDER BY email")
         userInfo = cursor.fetchall()
 
-    result_dict = {'records': userInfo}
+    result_dict = {'records': driverDetail}
 
     return render(request,'app/driverlist.html',result_dict)
 
