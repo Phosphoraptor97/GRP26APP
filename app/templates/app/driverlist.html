@@ -1,1 +1,42 @@
-
+{% load static %}
+<html>
+<body>
+    <h2>Admin page user list</h2>
+    <img src="{% static 'app/images/nus.jpg' %}" width="10%"   alt="NUS logo"/><br/>
+    <a href="driverlogin">User login(driver)</a>
+    <a href="passengerlogin">User login(passenger)</a>
+    <a href="add">New customer</a>
+    <a href="driverlist">driver list</a>
+    <a href="passengerlist">passenger list</a>
+    <br/><br/>
+    <table border=1>
+        <thead>
+            <th>email</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>username</th>
+            <th>action</th>
+        </thead>
+        {% for userInfo in records %}
+        <tr>
+            
+            <td> {{ driverDetail.0 }} </td>
+            <td> {{ driverDetail.3 }} </td>
+            <td> {{ driverDetail.2 }} </td>
+            <td> {{ driverDetail.1 }} </td>
+            <td>
+                <a href="view/{{driverDetail.0}}"><button>View</button></a> | 
+                <a href="edit/{{driverDetail.0}}"><button>Edit</button></a>
+                <a href="driver/{{driverDetail.0}}"><button>Sign up as driver</button></a>
+                <a href="passenger/{{driverDetail.0}}"><button>Sign up as passenger</button></a>
+                | 
+                <form method="POST" style="display: inline;">
+                {% csrf_token %}
+                <input type="hidden" name="email" value="{{driverDetail.0}}"/>
+                <button onclick="return confirm('Are you sure you want to delete {{driverDetail.0}}?');" type="submit" name="action" value="delete">Delete</button> 
+              </form></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
