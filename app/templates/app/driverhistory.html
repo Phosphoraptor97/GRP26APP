@@ -1,7 +1,7 @@
 {% load static %}
 <html>
 <body>
-    <h2>Admin page user list</h2>
+    <h2>Driver history</h2>
     <img src="{% static 'app/images/nus.jpg' %}" width="10%"   alt="NUS logo"/><br/>
     <a href="driverlogin">back</a>
     <br/><br/>
@@ -14,7 +14,18 @@
             <th>transactionamount</th>
             <th>date</th>
         </thead>
-        
+        {% for userInfo in records %}
+        <tr>
+            
+            <td> {{ transactionHistory.3 }} </td>
+            <td> {{ transactionHistory.4 }} </td>
+            <td> {{ transactionHistory.2 }} </td>
+            <td> {{ transactionHistory.2 }} </td>
+            <td> {{ transactionHistory.1 }} </td>
+            <!-- <td> {{ transactionHistory.1 }} </td> -->
+            
+        </tr>
+        {% endfor %}
     </table>
 </body>
 </html>
