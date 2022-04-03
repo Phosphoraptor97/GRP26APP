@@ -3,7 +3,7 @@ from django.db import connection
 
 # Create your views here.
 
-def passengerlist(request):
+def passengerDetail(request):
     """Shows the main page"""
 
     ## Delete customer
@@ -21,7 +21,7 @@ def passengerlist(request):
 
     return render(request,'app/passengerlist.html',result_dict)
 
-def driverlist(request):
+def driverDetail(request):
     """Shows the main page"""
 
     ## Delete customer
