@@ -30,7 +30,7 @@ urlpatterns = [
     path('driverinterface/', app.views.driverinterface, name='driverinterface'),
     path('driverhistory', app.views.driverhistory, name='driverhistory'),
     path('signup', app.views.signup, name='signup'),
-    path('passengerinterface/', app.views.signup, name='signup')
+    path('passengerinterface/', app.views.passengerinterface, name='passengerinterface')
     
     
 ]
