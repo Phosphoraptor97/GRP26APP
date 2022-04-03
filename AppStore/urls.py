@@ -33,7 +33,9 @@ urlpatterns = [
     
     path('signup', app.views.signup, name='signup'),
     
-    path('passengerinterface/', app.views.passengerinterface, name='passengerinterface')
+    path('passengerinterface/', app.views.passengerinterface, name='passengerinterface'),
+    path('passengerlist/',app.views.passengerlist,name='passengerlist'),
+    path('driverlist/',app.views.driverlist,name'passengerlist')
     
     
 ]
